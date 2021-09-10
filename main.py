@@ -37,6 +37,21 @@ def likes(id):
 
 
 f = open("my-comments.html", "r")
+out = open("results.html", "w")
+out.write(
+    """
+        <head>
+        <title>Top Comments</title>
+        </head>
+        <body>
+        <table>
+        <tr>
+        <th>likes </th>
+        <th>Video </th>
+        <th>Comment </th>
+        </tr>
+        """
+)
 soup = BeautifulSoup(f, features="html.parser")
 comments = soup.find_all("li")
 result = []
@@ -49,6 +64,22 @@ for comment in tqdm(comments):
         continue
     result.append([k, commentLink, commentContent])
 result = sorted(result, reverse=True)
-# replace 10 with any number
+#  replace 10 with any number
 for likes, link, content in result[:10]:
-    print(likes, link, content)
+    out.write(
+        f"""
+            <tr>
+            <td>{likes}</td>
+            <td><a href='{link}'>Video</a></td>
+            <td>{content}</td>
+            </tr>
+            """
+    )
+out.write(
+    """
+        </table>
+        </body>
+        """
+)
+f.close()
+out.close()
