@@ -16,7 +16,7 @@
 
 ![prog_bar](https://user-images.githubusercontent.com/44405294/132900384-93a06ad3-68b0-47ad-a287-945b45e0b227.png)
 
-- outputs results to a html file(blurred unrelevant parts)
+- outputs results to a html file(blurred irrelevant parts)
 
 ![screenshot](https://user-images.githubusercontent.com/44405294/132900530-7fdf00d7-bf43-4e90-ac6b-5a2d5180e165.png)
 
